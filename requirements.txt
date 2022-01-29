@@ -1,0 +1,9 @@
+djongo
+django
+pymongo==3.12.1
+dnspython
+djangorestframework
+pillow
+django-filter==2.4.0
+dj-rest-auth
+drf-yasg
