@@ -1,4 +1,4 @@
-"""Resi_mongo URL Configuration
+"""Resi_mysql URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+
 
 from rest_framework import routers
 
@@ -46,6 +47,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', views.index),
+    path('changepassword/client/', views.client_change_password),
+    path('changepassword/proprio/', views.proprio_change_password),
     path('admin/', admin.site.urls),
     path('client/', include(router.urls)),
     path('proprio/', include(routerpro.urls)),
@@ -58,4 +61,3 @@ urlpatterns = [
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
-
